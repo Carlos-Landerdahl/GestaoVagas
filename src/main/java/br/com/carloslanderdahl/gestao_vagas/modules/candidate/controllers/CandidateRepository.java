@@ -9,4 +9,5 @@ import br.com.carloslanderdahl.gestao_vagas.modules.candidate.CandidateEntity;
 
 public interface CandidateRepository extends JpaRepository<CandidateEntity, UUID> {
   Optional<CandidateEntity> findByUsernameOrEmail(String username, String email);
+  Optional<CandidateEntity> findByUsername(String username);
 }
