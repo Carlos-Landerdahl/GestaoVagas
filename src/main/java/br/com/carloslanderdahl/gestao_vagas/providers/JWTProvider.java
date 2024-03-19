@@ -10,11 +10,11 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 @Service
 public class JWTProvider {
   @Value("${security.token.secret}")
-  private String secreteKey;
+  private String secretKey;
 
   public String validateToken(String token) {
     token = token.replace("Bearer ", "");
-    Algorithm algorithm = Algorithm.HMAC256(secreteKey);
+    Algorithm algorithm = Algorithm.HMAC256(secretKey);
     try {
       var subject = JWT.require(algorithm)
           .build()
